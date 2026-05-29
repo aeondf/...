@@ -4,6 +4,7 @@ package interview;
 
 service InterviewService {
   rpc StartInterview (StartInterviewRequest) returns (StartInterviewResponse);
+  rpc SubmitAnswer (SubmitAnswerRequest) returns (SubmitAnswerResponse);
 }
 
 message StartInterviewRequest {
@@ -15,4 +16,15 @@ message StartInterviewRequest {
 message StartInterviewResponse {
   string session_id = 1;
   string question = 2;
+}
+
+message SubmitAnswerRequest {
+  string session_id = 1;
+  string answer = 2;
+}
+
+message SubmitAnswerResponse {
+  string feedback = 1;
+  string next_question = 2;
+  bool is_finished = 3;
 }

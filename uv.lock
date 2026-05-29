@@ -956,8 +956,12 @@ dependencies = [
     { name = "langchain-openai" },
     { name = "langgraph" },
     { name = "python-dotenv" },
-    { name = "ruff" },
     { name = "streamlit" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "ruff" },
 ]
 
 [package.metadata]
@@ -967,9 +971,11 @@ requires-dist = [
     { name = "langchain-openai", specifier = ">=1.2.2" },
     { name = "langgraph", specifier = ">=1.2.2" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
-    { name = "ruff", specifier = ">=0.15.15" },
     { name = "streamlit", specifier = ">=1.58.0" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ruff", specifier = ">=0.15.15" }]
 
 [[package]]
 name = "pillow"

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0finterview.proto\x12\tinterview\"C\n\x15StartInterviewRequest\x12\r\n\x05track\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\x0c\n\x04mode\x18\x03 \x01(\t\">\n\x16StartInterviewResponse\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x10\n\x08question\x18\x02 \x01(\t2i\n\x10InterviewService\x12U\n\x0eStartInterview\x12 .interview.StartInterviewRequest\x1a!.interview.StartInterviewResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0finterview.proto\x12\tinterview\"C\n\x15StartInterviewRequest\x12\r\n\x05track\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\x0c\n\x04mode\x18\x03 \x01(\t\">\n\x16StartInterviewResponse\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x10\n\x08question\x18\x02 \x01(\t\"9\n\x13SubmitAnswerRequest\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x0e\n\x06\x61nswer\x18\x02 \x01(\t\"T\n\x14SubmitAnswerResponse\x12\x10\n\x08\x66\x65\x65\x64\x62\x61\x63k\x18\x01 \x01(\t\x12\x15\n\rnext_question\x18\x02 \x01(\t\x12\x13\n\x0bis_finished\x18\x03 \x01(\x08\x32\xba\x01\n\x10InterviewService\x12U\n\x0eStartInterview\x12 .interview.StartInterviewRequest\x1a!.interview.StartInterviewResponse\x12O\n\x0cSubmitAnswer\x12\x1e.interview.SubmitAnswerRequest\x1a\x1f.interview.SubmitAnswerResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +35,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_STARTINTERVIEWREQUEST']._serialized_end=97
   _globals['_STARTINTERVIEWRESPONSE']._serialized_start=99
   _globals['_STARTINTERVIEWRESPONSE']._serialized_end=161
-  _globals['_INTERVIEWSERVICE']._serialized_start=163
-  _globals['_INTERVIEWSERVICE']._serialized_end=268
+  _globals['_SUBMITANSWERREQUEST']._serialized_start=163
+  _globals['_SUBMITANSWERREQUEST']._serialized_end=220
+  _globals['_SUBMITANSWERRESPONSE']._serialized_start=222
+  _globals['_SUBMITANSWERRESPONSE']._serialized_end=306
+  _globals['_INTERVIEWSERVICE']._serialized_start=309
+  _globals['_INTERVIEWSERVICE']._serialized_end=495
 # @@protoc_insertion_point(module_scope)

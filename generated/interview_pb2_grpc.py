@@ -39,12 +39,23 @@ class InterviewServiceStub(object):
                 request_serializer=interview__pb2.StartInterviewRequest.SerializeToString,
                 response_deserializer=interview__pb2.StartInterviewResponse.FromString,
                 _registered_method=True)
+        self.SubmitAnswer = channel.unary_unary(
+                '/interview.InterviewService/SubmitAnswer',
+                request_serializer=interview__pb2.SubmitAnswerRequest.SerializeToString,
+                response_deserializer=interview__pb2.SubmitAnswerResponse.FromString,
+                _registered_method=True)
 
 
 class InterviewServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def StartInterview(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SubmitAnswer(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -57,6 +68,11 @@ def add_InterviewServiceServicer_to_server(servicer, server):
                     servicer.StartInterview,
                     request_deserializer=interview__pb2.StartInterviewRequest.FromString,
                     response_serializer=interview__pb2.StartInterviewResponse.SerializeToString,
+            ),
+            'SubmitAnswer': grpc.unary_unary_rpc_method_handler(
+                    servicer.SubmitAnswer,
+                    request_deserializer=interview__pb2.SubmitAnswerRequest.FromString,
+                    response_serializer=interview__pb2.SubmitAnswerResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -86,6 +102,33 @@ class InterviewService(object):
             '/interview.InterviewService/StartInterview',
             interview__pb2.StartInterviewRequest.SerializeToString,
             interview__pb2.StartInterviewResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SubmitAnswer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/interview.InterviewService/SubmitAnswer',
+            interview__pb2.SubmitAnswerRequest.SerializeToString,
+            interview__pb2.SubmitAnswerResponse.FromString,
             options,
             channel_credentials,
             insecure,
