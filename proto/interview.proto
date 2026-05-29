@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package interview;
+
+service InterviewService {
+  rpc StartInterview (StartInterviewRequest) returns (StartInterviewResponse);
+}
+
+message StartInterviewRequest {
+  string track = 1;
+  string level = 2;
+  string mode = 3;
+}
+
+message StartInterviewResponse {
+  string session_id = 1;
+  string question = 2;
+}
